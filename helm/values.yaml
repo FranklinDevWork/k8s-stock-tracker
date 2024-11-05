@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: thomasfranklin/k8s-stock-tracker 
+  tag: 0.2.0
+  pullPolicy: IfNotPresent
+
+service:
+  name: k8s-stock-tracker
+  type: NodePort
+  externalPort: 8080
+  internalPort: 8080
+  symbol: MSFT
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
